@@ -24,3 +24,5 @@ void VectorComponents::evaluate(float theDelta) {
 	_outZ.set(myV->z);
 }
 
+
+REGISTER_NODE(VectorComponents)

@@ -20,3 +20,5 @@ void Inv::evaluate(float theDelta) {
 	_out.set(myResult);
 }
 
+
+REGISTER_NODE(Inv)

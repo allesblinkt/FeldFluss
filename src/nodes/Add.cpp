@@ -21,3 +21,5 @@ void Add::evaluate(float theDelta) {
 	_out.set(mySum);
 }
 
+
+REGISTER_NODE(Add)

@@ -1,0 +1,19 @@
+#define DO_TEST( _FUNC_ ) \
+	DoTest( #_FUNC_, &_FUNC_ );
+
+	DO_TEST( TestMatrix22<float> );
+	DO_TEST( TestMatrix33<float> );
+	DO_TEST( TestMatrix44<float> );
+	
+	std::cout << std::endl;
+
+	return 0;
+}
+
+void DoTest( const std::string& name, void (*testFunc)( std::ostream& os ) )
+{
+
+
+
+
+

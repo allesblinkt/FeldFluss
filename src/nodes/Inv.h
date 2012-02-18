@@ -1,5 +1,7 @@
 #pragma once
+
 #include "../base/Node.h"
+#include "../base/NodeRegistry.h"
 
 
 class Inv : public Node
@@ -17,3 +19,5 @@ private:
     
     
 };
+
+

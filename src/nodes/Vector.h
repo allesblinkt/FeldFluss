@@ -2,6 +2,8 @@
 
 #include "../base/Node.h"
 #include "cinder/Vector.h"
+#include "../base/NodeRegistry.h"
+
 
 class Vector : public Node
 {
@@ -18,3 +20,4 @@ private:
 
 	NodeOutput<Vec3d> _out;
 };
+

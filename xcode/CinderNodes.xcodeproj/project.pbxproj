@@ -25,6 +25,8 @@
 		4774B10D14EC0D7000257425 /* NodeInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4774B10C14EC0D7000257425 /* NodeInput.cpp */; };
 		4788A0FD14EF034600E74276 /* VectorComponets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4788A0FC14EF034600E74276 /* VectorComponets.cpp */; };
 		4788A10114EF057B00E74276 /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4788A10014EF057B00E74276 /* Vector.cpp */; };
+		47D400EF14EF16CB009D7647 /* Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 47D400EE14EF16CB009D7647 /* Notes.txt */; };
+		47D400F214EFCF32009D7647 /* NodeRegistry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47D400F114EFCF32009D7647 /* NodeRegistry.cpp */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
@@ -66,6 +68,9 @@
 		4788A0FF14EF035200E74276 /* VectorComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorComponents.h; sourceTree = "<group>"; };
 		4788A10014EF057B00E74276 /* Vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
 		4788A10214EF058300E74276 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		47D400EE14EF16CB009D7647 /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Notes.txt; path = ../Notes.txt; sourceTree = "<group>"; };
+		47D400F114EFCF32009D7647 /* NodeRegistry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeRegistry.cpp; sourceTree = "<group>"; };
+		47D400F314EFCF44009D7647 /* NodeRegistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeRegistry.h; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		5323E6B50EAFCA7E003A9687 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
@@ -142,6 +147,7 @@
 		29B97314FDCFA39411CA2CEA /* CinderNodes */ = {
 			isa = PBXGroup;
 			children = (
+				47D400EE14EF16CB009D7647 /* Notes.txt */,
 				29B97315FDCFA39411CA2CEA /* Headers */,
 				080E96DDFE201D6D7F000001 /* Source */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -193,6 +199,8 @@
 				4774B10A14EC0D2F00257425 /* NodeOutput.cpp */,
 				4774B10C14EC0D7000257425 /* NodeInput.cpp */,
 				475559D814EDD31E00BC1876 /* NodeInputBase.cpp */,
+				47D400F114EFCF32009D7647 /* NodeRegistry.cpp */,
+				47D400F314EFCF44009D7647 /* NodeRegistry.h */,
 			);
 			name = base;
 			path = ../src/base;
@@ -265,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CCAF15116A9FEE008396D5 /* CinderApp.icns in Resources */,
+				47D400EF14EF16CB009D7647 /* Notes.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +295,7 @@
 				475559DF14EDDF2300BC1876 /* Inv.cpp in Sources */,
 				4788A0FD14EF034600E74276 /* VectorComponets.cpp in Sources */,
 				4788A10114EF057B00E74276 /* Vector.cpp in Sources */,
+				47D400F214EFCF32009D7647 /* NodeRegistry.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

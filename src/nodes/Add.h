@@ -1,6 +1,7 @@
 #pragma once
-#include "../base/Node.h"
 
+#include "../base/Node.h"
+#include "../base/NodeRegistry.h"
 
 class Add : public Node
 {
@@ -18,3 +19,5 @@ private:
 
 
 };
+
+

@@ -12,6 +12,8 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+#include "base/NodeRegistry.h"
+
 
 #include "nodes/Add.h"
 #include "nodes/Inv.h"
@@ -63,7 +65,6 @@ void CinderNodesApp::setup()
                 myNode = new VectorComponents();
             }         
             
-            
             if(i % 4 == 3) {
                 myNode = new Vector();
             }    
@@ -77,6 +78,9 @@ void CinderNodesApp::setup()
             
         }
     }
+    
+    
+    NodeRegistry::getInstance().printRegisteredNodes();
    
 }
 
