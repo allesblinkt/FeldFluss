@@ -3,7 +3,8 @@
 #include "../base/Node.h"
 #include "../base/NodeRegistry.h"
 
-
+namespace feld { namespace fluss {
+    
 class Inv : public Node
 {
 public:
@@ -19,5 +20,6 @@ private:
     
     
 };
-
+    
+} }
 

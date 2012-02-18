@@ -1,6 +1,6 @@
 #include "NodeInput.h"
 
-
+using namespace feld::fluss;
 
 template <class T>
 NodeInput<T>::NodeInput() {
@@ -16,5 +16,5 @@ NodeInput<T>::~NodeInput() {
 #include "cinder/Vector.h"
 
 
-template class NodeInput<double>;
-template class NodeInput<cinder::Vec3d>;
+template class feld::fluss::NodeInput<double>;
+template class feld::fluss::NodeInput<cinder::Vec3d>;

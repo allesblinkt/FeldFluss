@@ -1,5 +1,7 @@
 #include "Vector.h"
 
+using namespace feld::fluss;
+
 Vector::Vector() {
     name("Vector");
     

@@ -2,6 +2,8 @@
 #include "cinder/cairo/Cairo.h"
 #include "Node.h"
 
+namespace feld { namespace fluss {
+
 using namespace ci;
 
 class Node;
@@ -36,3 +38,5 @@ private:
     Font _font;
 
 };
+
+} }

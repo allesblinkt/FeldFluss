@@ -1,5 +1,7 @@
 #include "Inv.h"
 
+using namespace feld::fluss;
+
 Inv::Inv() {
     name("Invert");
     

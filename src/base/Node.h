@@ -8,9 +8,11 @@
 
 #include <vector>
 
+namespace feld { namespace fluss {
+
 enum NodeState { GOOD, WARNING, ERROR };
 
-class NodeView;
+class NodeView;    // resolve circular dependency
 
 class Node
 {
@@ -52,7 +54,7 @@ private:
 	bool _forceEval;
 };
 
-
+} }
 
 //template <class T> void Describe() {
 //	T::DescribeYourself();

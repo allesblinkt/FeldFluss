@@ -1,6 +1,8 @@
 #include "Node.h"
 #include <iostream>
 
+using namespace feld::fluss;
+
 Node::Node() {
     //std::cout << "Node constructor" << std::endl;
 	_view = new NodeView(*this);

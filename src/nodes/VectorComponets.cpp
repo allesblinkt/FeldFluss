@@ -1,5 +1,7 @@
 #include "VectorComponents.h"
 
+using namespace feld::fluss;
+
 VectorComponents::VectorComponents() {
     name("VecComponents");
     

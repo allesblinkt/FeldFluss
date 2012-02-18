@@ -4,7 +4,8 @@
 #include "cinder/Vector.h"
 #include "../base/NodeRegistry.h"
 
-
+namespace feld { namespace fluss {
+    
 class Vector : public Node
 {
 public:
@@ -20,4 +21,5 @@ private:
 
 	NodeOutput<Vec3d> _out;
 };
-
+    
+} }

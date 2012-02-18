@@ -1,6 +1,7 @@
 #pragma once
 #include "NodeOutputBase.h"
 
+namespace feld { namespace fluss {
 
 template<class T>
 class NodeOutput : public NodeOutputBase
@@ -16,3 +17,5 @@ public:
 private:
 	T _value;
 };
+
+} }

@@ -12,6 +12,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+
 #include "base/NodeRegistry.h"
 
 
@@ -19,6 +20,8 @@ using namespace std;
 #include "nodes/Inv.h"
 #include "nodes/VectorComponents.h"
 #include "nodes/Vector.h"
+
+using namespace feld::fluss;
 
 
 class CinderNodesApp : public AppBasic {

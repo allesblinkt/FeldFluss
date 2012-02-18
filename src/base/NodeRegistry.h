@@ -3,6 +3,8 @@
 #include <iostream>
 #include "Node.h"
 
+namespace feld { namespace fluss {
+
 using namespace std;
 
 template<class T> 
@@ -31,5 +33,6 @@ public:
     NodeRegistration(string theIdentifier, node_creator theCreator);
 };
 
+} }
 
 #define REGISTER_NODE(theIdentifier, theNodeClass) NodeRegistration  _node_registration_ ## theNodeClass(theIdentifier, &node_factory<theNodeClass>);

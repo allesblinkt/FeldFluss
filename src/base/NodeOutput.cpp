@@ -1,6 +1,8 @@
 #include "NodeOutput.h"
 #include "cinder/Vector.h"
 
+using namespace feld::fluss;
+
 template <class T>
 NodeOutput<T>::NodeOutput() {
 }
@@ -22,5 +24,5 @@ T NodeOutput<T>::get() {
 }
 
 
-template class NodeOutput<double>;
-template class NodeOutput<cinder::Vec3d>;
+template class feld::fluss::NodeOutput<double>;
+template class feld::fluss::NodeOutput<cinder::Vec3d>;

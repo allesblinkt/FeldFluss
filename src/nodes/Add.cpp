@@ -1,5 +1,7 @@
 #include "Add.h"
 
+using namespace feld::fluss;
+
 Add::Add() {
     name("Add");
     

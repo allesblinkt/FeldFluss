@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 
+namespace feld { namespace fluss {
+
 class NodePortBase
 {
 public:
@@ -12,3 +14,5 @@ protected:
 	std::string _name;
 
 };
+
+} }

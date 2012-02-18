@@ -1,6 +1,8 @@
 
 #include "NodeRegistry.h"
 
+using namespace feld::fluss;
+
 
 NodeRegistry::NodeRegistry() {
     
@@ -14,18 +16,20 @@ NodeRegistry& NodeRegistry::getInstance() {
 
 
 void NodeRegistry::printRegisteredNodes() {
-    iterator<<#typename _Category#>, <#typename _Tp#>>
+    cout << "I has " << _registers.size() << " nodes registered" << endl;
     
-    for(int i = 0; i < _registers.size(); i++) {
-     // Node* = new _registers[i];
+    map<string, node_creator>::iterator myIt;
+    for(myIt = _registers.begin(); myIt != _registers.end(); myIt++) {
+        string myIdentifier = myIt->first;
+
+        node_creator myCreator = myIt->second;
+        Node* myNode = myCreator();
         
-      //  node_creator func = _registers[i];
-        //Node* myNode = func();
-        
-        //cout << myNode->name() << endl;
+        cout << "[" << myIdentifier << "] " << myNode->name() << endl;
+
+        delete myNode;
     }
     
-    cout << "I has " << _registers.size() << " nodes registered" << endl;
 }
 
 

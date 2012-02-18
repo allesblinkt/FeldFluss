@@ -2,6 +2,8 @@
 #include "cinder/CinderMath.h"
 #include <iostream>
 
+using namespace feld::fluss;
+
 using namespace cinder;
 
 NodeView::NodeView(Node &theNode) {

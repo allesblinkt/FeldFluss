@@ -3,7 +3,8 @@
 #include "../base/Node.h"
 #include "../base/NodeRegistry.h"
 
-
+namespace feld { namespace fluss {
+    
 class VectorComponents : public Node
 {
 public:
@@ -22,6 +23,7 @@ private:
     
     
 };
-
+    
+} }
 
 

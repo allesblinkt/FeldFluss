@@ -1,5 +1,7 @@
 #include "NodePortBase.h"
 
+using namespace feld::fluss;
+
 std::string NodePortBase::name() {
 	return _name;
 }
