@@ -25,4 +25,4 @@ void VectorComponents::evaluate(float theDelta) {
 }
 
 
-REGISTER_NODE(VectorComponents)
+REGISTER_NODE("components_vector", VectorComponents)

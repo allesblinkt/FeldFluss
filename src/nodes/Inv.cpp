@@ -21,4 +21,4 @@ void Inv::evaluate(float theDelta) {
 }
 
 
-REGISTER_NODE(Inv)
+REGISTER_NODE("inverse_number", Inv)

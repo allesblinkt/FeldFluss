@@ -22,4 +22,4 @@ void Add::evaluate(float theDelta) {
 }
 
 
-REGISTER_NODE(Add)
+REGISTER_NODE("add_number", Add)

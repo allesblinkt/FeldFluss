@@ -14,22 +14,28 @@ NodeRegistry& NodeRegistry::getInstance() {
 
 
 void NodeRegistry::printRegisteredNodes() {
+    iterator<<#typename _Category#>, <#typename _Tp#>>
+    
     for(int i = 0; i < _registers.size(); i++) {
      // Node* = new _registers[i];
         
-       // std::cout << _registers[i] << std::endl;
+      //  node_creator func = _registers[i];
+        //Node* myNode = func();
+        
+        //cout << myNode->name() << endl;
     }
     
-    std::cout << "I has " << _registers.size() << " nodes registered";
-}
-
-void NodeRegistry::add(node_creator theCreator) {
-    _registers.push_back(theCreator);
+    cout << "I has " << _registers.size() << " nodes registered" << endl;
 }
 
 
-NodeRegistration::NodeRegistration(node_creator theCreator) {
-    NodeRegistry::getInstance().add(theCreator);
+void NodeRegistry::add(string theIdentifier, node_creator theCreator) {
+    _registers[theIdentifier] = theCreator;
+}
+
+
+NodeRegistration::NodeRegistration(string theIdentifier, node_creator theCreator) {
+    NodeRegistry::getInstance().add(theIdentifier, theCreator);
 }
 
 

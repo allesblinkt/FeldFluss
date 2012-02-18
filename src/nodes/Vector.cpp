@@ -21,4 +21,4 @@ void Vector::evaluate(float theDelta) {
 	_out.set(myV);
 }
 
-REGISTER_NODE(Vector)
+REGISTER_NODE("vector", Vector)
