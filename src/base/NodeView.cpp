@@ -9,7 +9,7 @@ using namespace cinder;
 NodeView::NodeView(Node &theNode) {
 	_node = &theNode;
     
-    _font = Font("Helvetica Neue", 10 );
+    _font = Font("Univers LT Std 65 Bold", 10 );
 }
 
 

@@ -24,7 +24,7 @@ using namespace std;
 using namespace feld::fluss;
 
 
-class CinderNodesApp : public AppBasic {
+class FeldFlussApp : public AppBasic {
 public:
     void prepareSettings( Settings *settings);
 	void setup();
@@ -37,14 +37,14 @@ public:
 };
 
 
-void CinderNodesApp::prepareSettings( Settings *settings )
+void FeldFlussApp::prepareSettings( Settings *settings )
 {
 	settings->setWindowSize( WIDTH, HEIGHT );
 	settings->setResizable( false );
 }
 
 
-void CinderNodesApp::setup()
+void FeldFlussApp::setup()
 {
     for(int j = 0; j < 20; j++){
         
@@ -87,15 +87,15 @@ void CinderNodesApp::setup()
    
 }
 
-void CinderNodesApp::mouseDown( MouseEvent event )
+void FeldFlussApp::mouseDown( MouseEvent event )
 {
 }
 
-void CinderNodesApp::update()
+void FeldFlussApp::update()
 {
 }
 
-void CinderNodesApp::draw()
+void FeldFlussApp::draw()
 {    
     
     std::cout << getAverageFps() << std::endl;
@@ -131,4 +131,4 @@ void CinderNodesApp::draw()
 }
 
 
-CINDER_APP_BASIC( CinderNodesApp, Renderer2d )
+CINDER_APP_BASIC( FeldFlussApp, Renderer2d )
