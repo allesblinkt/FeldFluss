@@ -1,7 +1,10 @@
 #pragma once
+
 #include <map>
 #include <iostream>
+
 #include "Node.h"
+
 
 namespace feld { namespace fluss {
 
@@ -17,20 +20,23 @@ typedef Node* (*node_creator)(void);
 
 
 class NodeRegistry {
-public:
-    void add(string theIdentifier, node_creator theCreator);
-    void printRegisteredNodes();
+    private:
+        NodeRegistry();
+        map<string, node_creator> _registers;
+        
+    
+    public:
+        void add(string theIdentifier, node_creator theCreator);
+        void printRegisteredNodes();
 
-    static NodeRegistry& getInstance();
-private:
-    NodeRegistry();
-    map<string, node_creator> _registers;
+        static NodeRegistry& getInstance();
+
 };
 
 
 class NodeRegistration {    
-public:
-    NodeRegistration(string theIdentifier, node_creator theCreator);
+    public:
+        NodeRegistration(string theIdentifier, node_creator theCreator);
 };
 
 } }

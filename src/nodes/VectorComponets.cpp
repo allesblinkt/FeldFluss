@@ -3,7 +3,7 @@
 using namespace feld::fluss;
 
 VectorComponents::VectorComponents() {
-    name("VecComponents");
+    name("Components");
     
     addInput("vector", &_in);
     

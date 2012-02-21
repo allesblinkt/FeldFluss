@@ -4,7 +4,6 @@ using namespace feld::fluss;
 
 
 Fluss::Fluss() {
-    
 }
 
 
@@ -13,15 +12,18 @@ void Fluss::addNode(Node* theNode) {
 }
 
 
+list<Node*>& Fluss::nodes() {
+    return _nodes;
+}
+
+
 void Fluss::update() {
 	list<Node*> myNodes(_nodes);
 	list<Node*> mySort;
 
-
     for(list<Node*>::iterator it = myNodes.begin(); it != myNodes.end(); ++it) {
        myNodes.erase(it);
     }
-
 }
 
 

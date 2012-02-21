@@ -26,147 +26,80 @@ using namespace feld::fluss;
 
 
 class FeldFlussApp : public AppBasic {
-public:
-    void prepareSettings( Settings *settings);
-	void setup();
-	void mouseDown( MouseEvent event );	
-	void update();
-	void draw();
+    public:
+        void prepareSettings( Settings *settings);
+        void setup();
+        void mouseDown( MouseEvent event );	
+        void update();
+        void draw();
 
-    Fluss fluss;    
+        Fluss fluss;    
 };
 
 
-void FeldFlussApp::prepareSettings( Settings *settings )
-{
+void FeldFlussApp::prepareSettings( Settings *settings ) {
 	settings->setWindowSize( WIDTH, HEIGHT );
 	settings->setResizable( false );
 }
 
 
-void FeldFlussApp::setup()
-{
-//    for(int j = 0; j < 20; j++){
-//        
-//        for(int i = 0; i < 10; i++){
-//            
-//            Vec2i myPos;
-//            myPos.set(i * 120, j * 25);
-//            
-//            
-//            Node* myNode;
-//            
-//            if(i % 4 == 0) {
-//                myNode = new Add();
-//            } 
-//            
-//            if(i % 4 == 1) {
-//                myNode = new Inv();
-//            } 
-//            
-//            if(i % 4 == 2) {
-//                myNode = new VectorComponents();
-//            }         
-//            
-//            if(i % 4 == 3) {
-//                myNode = new Vector();
-//            }    
-//            
-//            myNode->view()->position()->set(myPos);
-//
-//            
-//            fluss.addNode(myNode);
-//            
-//            
-//        }
-//    }
-    
-    
+void FeldFlussApp::setup() {
     NodeRegistry::getInstance().printRegisteredNodes();
     
+    
     Vector* myVectorNode = new Vector();
+    myVectorNode->view()->position()->set(50, 50);
     fluss.addNode(myVectorNode);
     
+    
     Add* myAddNode = new Add();
+    myAddNode->view()->position()->set(50, 100);
     fluss.addNode(myAddNode);
+ 
     
     VectorComponents* myVComponents = new VectorComponents();
+    myVComponents->view()->position()->set(50, 150);
     fluss.addNode(myVComponents);
 
     
     
+    
+    
     /* Testing */
-    cout << "Name is " << myVComponents->outputs()["x"]->name() << endl;
-    //myVComponents->outputs()["x"]->connect(myAddNode->inputs()["in1"]);
-    cout << typeid(myVComponents->outputs()["x"]).name() << endl;
-   
-    
-    NodeOutput<double>* myDoubleOut = dynamic_cast<NodeOutput<double>*>(myVComponents->outputs()["x"]);
-    
-    if(myDoubleOut == 0) {
-        cout << "Cast failed" << endl;
-    } else {
-        cout << "Foo" << endl;
-    }
-    
-    
-    NodeOutput<Vec3d>* myVectorOut = dynamic_cast<NodeOutput<Vec3d>*>(myVComponents->outputs()["x"]);
-    
-    if(myVectorOut == 0) {
-        cout << "Cast failed" << endl;
-    } else {
-        cout << "Foo" << endl;
-    }
-    
-    
     myVComponents->outputs()["x"]->connect( myAddNode->inputs()["first"] );
     myVectorNode->outputs()["vector"]->connect( myAddNode->inputs()["second"] );
 
    
 }
 
-void FeldFlussApp::mouseDown( MouseEvent event )
-{
+void FeldFlussApp::mouseDown( MouseEvent event ) {
 }
 
-void FeldFlussApp::update()
-{
+
+void FeldFlussApp::update() {
     fluss.update();
 }
 
-void FeldFlussApp::draw()
-{    
-    
- //    std::cout << getAverageFps() << std::endl;
-    
- //    cairo::Context myG( cairo::createWindowSurface() );
-	// myG.setSourceRgb( 0.486, 0.498, 0.486 );
- //    myG.paint();
-    
-    
-    
- //    for(int i= 0; i < _nodes.size(); i++){
-     
- //        Node* myNode = _nodes[i];
-        
-        
- //        if(i == 0) {
- //            myNode->view()->position()->set(getMousePos());
- //        }
-        
-        
- //        myG.identityMatrix();
-        
- //        myNode->view()->draw(myG);
 
+void FeldFlussApp::draw() {    
     
- //    }
+    // std::cout << getAverageFps() << std::endl;
     
+    cairo::Context myG( cairo::createWindowSurface() );
+    myG.setSourceRgb( 0.486, 0.498, 0.486 );
+    myG.paint();
+    
+    list<Node*> myNodes = fluss.nodes();
+    
+    for(list<Node*>::iterator it = myNodes.begin(); it != myNodes.end(); ++it) {
+        Node* myNode = *it;
         
+        myG.identityMatrix();
+        
+        myNode->view()->draw(myG);
+        
+    }
 
-    
-       
-    
 }
 
 

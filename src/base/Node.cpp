@@ -46,18 +46,20 @@ vector<Node*> Node::connectionsUp() {
     
     map<string, NodeInputBase*>::iterator myIt;
     for(myIt = _inputs.begin(); myIt != _inputs.end(); myIt++) {        
-        NodeInputBase* myInput = myIt->second;
+        // NodeInputBase* myInput = myIt->second;
 
-        //myInput-> 
+        // myInput-> 
         
         // TODO: continue here.
     }
 
-    
+    return myConnections;
 }
 
 vector<Node*> Node::connectionsDown() {
-    
+    vector<Node*> myConnections;
+
+    return myConnections;
 }
 
 

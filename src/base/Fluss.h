@@ -7,17 +7,20 @@
 
 namespace feld { namespace fluss {
 
-    class Fluss {   
+class Fluss {   
+    private:
+        list<Node*> _nodes;
+        
+    
     public:
         Fluss();
         void update();
         void addNode(Node* theNode);
+        list<Node*>& nodes();
         
         ~Fluss();
+
         
-    private:
-        list<Node*> _nodes;
-        
-    };
+};
     
 } }

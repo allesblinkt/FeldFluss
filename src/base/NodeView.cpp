@@ -9,16 +9,14 @@ using namespace cinder;
 NodeView::NodeView(Node &theNode) {
 	_node = &theNode;
     
-    _font = Font("Univers LT Std 65 Bold", 10 );
+    _font = Font("Helvetica Neue Bold", 10 );  // TODO: move this somewhere. We only need one
 }
 
 
 void NodeView::draw(cairo::Context &theG) {
     _size = _calculateSize();
 
-    
-    
-    
+        
     cairo::GradientLinear myGradient(0, 0, 0, _size.y);
     
     if(_node->state() == WARNING) {
@@ -33,8 +31,7 @@ void NodeView::draw(cairo::Context &theG) {
         myGradient.addColorStop(0.85, Colorf(0.227, 0.188, 0.2));
         
     }
-
-    
+   
     
     
 	Rectf myRect;
@@ -57,7 +54,6 @@ void NodeView::draw(cairo::Context &theG) {
     
     theG.setSource(myGradient);
 
-//    theG.setSourceRgb(1.0, 1.0, 0);
     theG.roundedRectangle(myRect, 2);
     theG.fill(); 
     
@@ -100,16 +96,9 @@ void NodeView::draw(cairo::Context &theG) {
     theG.fill();
     
     theG.setSourceRgb(1.0, 0, 0);
-
-    
     
 
-    
-    
-
-    theG.flush();
-    
-    //theG.popGroup();
+    theG.flush();    
 }
 
 
@@ -122,7 +111,6 @@ Vec2f NodeView::_calculateSize() {
     const int myInputCount = _node->inputs().size();
     const int myOutputCount = _node->outputs().size();
 
-    //std::cout << "I (" << _node->name() << ") has " << myInputCount << " inputs and " << myOutputCount << " outputs" << std::endl;
 
     int myMax = math<int>::max(myInputCount, myOutputCount);
 

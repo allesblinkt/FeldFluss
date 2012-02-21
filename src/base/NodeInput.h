@@ -6,10 +6,10 @@ namespace feld { namespace fluss {
 
 template<typename T> class NodeOutput;
 
+    
 class NodeInputBase : public NodePortBase  { 
     private:
     
-
     public:
         virtual void foo() = 0; //TODO: remove me
 };

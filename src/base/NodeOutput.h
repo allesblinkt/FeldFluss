@@ -11,6 +11,7 @@ namespace feld { namespace fluss {
 
 template<typename T> class NodeInput;
 class NodeInputBase;
+  
     
 class NodeOutputBase : public NodePortBase  { 
     private:
@@ -22,21 +23,20 @@ class NodeOutputBase : public NodePortBase  {
     
     
 template<typename T>
-class NodeOutput : public NodeOutputBase
-{
-public:
-	NodeOutput();
-	~NodeOutput();
-
-	void value(T theValue);
-	T value();
+class NodeOutput : public NodeOutputBase {
+    private:
+        T _value;
+        list<NodeInput<T>*> _connections;
     
-    void connect(NodeInputBase* theInput);
+    
+    public:
+        NodeOutput();
+        ~NodeOutput();
 
-
-private:
-	T _value;
-    list<NodeInput<T>*> _connections;
+        void value(T theValue);
+        T value();
+        
+        void connect(NodeInputBase* theInput);
 
 };
 

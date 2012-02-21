@@ -39,8 +39,6 @@ void NodeOutput<T>::connect(NodeInputBase* theInput) {
     } else {
         cout << "We are not compatible" << endl;
     }
-    
-    //_connections.push_back(theOther);
 }
 
 
