@@ -65,29 +65,29 @@ void NodeView::draw(cairo::Context &theG) {
     
     
     
-    for(int i = 0; i < _node->inputs().size(); i++) {
-        NodeInputBase *myInput = _node->inputs()[i];
-        int myX = _size.x - (i * PIN_WIDTH + (i-1) * PIN_SPACING + PIN_SPACING + PIN_WIDTH);
-        
-        theG.setSourceRgb(0.8, 0.8, 0.8);
-        theG.rectangle(myX - PIN_WIDTH, 0, PIN_WIDTH, PIN_HEIGHT);
-        theG.fill();
-        
-        
-        
-    }
-    
-    
-    
-    for(int i = 0; i < _node->outputs().size(); i++) {
-        NodeOutputBase *myOutput = _node->outputs()[i];
-        
-        int myX = _size.x - (i * PIN_WIDTH + (i-1) * PIN_SPACING + PIN_SPACING + PIN_WIDTH);
-        
-        theG.setSourceRgb(0.8, 0.8, 0.8);
-        theG.rectangle(myX - PIN_WIDTH, _size.y - PIN_HEIGHT, PIN_WIDTH, PIN_HEIGHT);
-        theG.fill();        
-    }
+//    for(int i = 0; i < _node->inputs().size(); i++) {
+//        NodeInputBase *myInput = _node->inputs()[i];
+//        int myX = _size.x - (i * PIN_WIDTH + (i-1) * PIN_SPACING + PIN_SPACING + PIN_WIDTH);
+//        
+//        theG.setSourceRgb(0.8, 0.8, 0.8);
+//        theG.rectangle(myX - PIN_WIDTH, 0, PIN_WIDTH, PIN_HEIGHT);
+//        theG.fill();
+//        
+//        
+//        
+//    }
+//    
+//    
+//    
+//    for(int i = 0; i < _node->outputs().size(); i++) {
+//        NodeOutputBase *myOutput = _node->outputs()[i];
+//        
+//        int myX = _size.x - (i * PIN_WIDTH + (i-1) * PIN_SPACING + PIN_SPACING + PIN_WIDTH);
+//        
+//        theG.setSourceRgb(0.8, 0.8, 0.8);
+//        theG.rectangle(myX - PIN_WIDTH, _size.y - PIN_HEIGHT, PIN_WIDTH, PIN_HEIGHT);
+//        theG.fill();        
+//    }
     
     
     

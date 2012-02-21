@@ -4,7 +4,6 @@
 using namespace feld::fluss;
 
 Node::Node() {
-    //std::cout << "Node constructor" << std::endl;
 	_view = new NodeView(*this);
 	
 	name("Untitled");
@@ -18,25 +17,47 @@ Node::~Node() {
 
 
 
-std::vector<NodeInputBase*> Node::inputs() {
+std::map<string, NodeInputBase*>& Node::inputs() {
 	return _inputs;
 }
 
 
-std::vector<NodeOutputBase*> Node::outputs() {
+std::map<string, NodeOutputBase*>& Node::outputs() {
 	return _outputs;
 }
 
 
-void Node::addInput(NodeInputBase* theInput, std::string theName) {
-    theInput->name(theName);
-	_inputs.push_back(theInput);
+void Node::addInput(std::string theIdentifier, NodeInputBase* theInput) {
+    _inputs[theIdentifier] = theInput;
+    theInput->name(theIdentifier);
+    theInput->node(this);
 }
 
 
-void Node::addOutput(NodeOutputBase* theOutput, std::string theName) {
-    theOutput->name(theName);
-	_outputs.push_back(theOutput);
+void Node::addOutput(string theIdentifier, NodeOutputBase* theOutput) {
+    _outputs[theIdentifier] = theOutput;
+    theOutput->name(theIdentifier);
+    theOutput->node(this);
+}
+
+
+vector<Node*> Node::connectionsUp() {
+    vector<Node*> myConnections;
+    
+    map<string, NodeInputBase*>::iterator myIt;
+    for(myIt = _inputs.begin(); myIt != _inputs.end(); myIt++) {        
+        NodeInputBase* myInput = myIt->second;
+
+        //myInput-> 
+        
+        // TODO: continue here.
+    }
+
+    
+}
+
+vector<Node*> Node::connectionsDown() {
+    
 }
 
 
@@ -50,7 +71,7 @@ std::string Node::name() {
 } 
 
 
-void Node::name(std::string theName) {
+void Node::name(string theName) {
 	_name = theName;
 } 
 

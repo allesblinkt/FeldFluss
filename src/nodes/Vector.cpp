@@ -5,11 +5,11 @@ using namespace feld::fluss;
 Vector::Vector() {
     name("Vector");
     
-    addInput(&_inX, "x");
-    addInput(&_inY, "y");
-    addInput(&_inZ, "z");
+    addInput("x", &_inX);
+    addInput("y", &_inY);
+    addInput("z", &_inZ);
     
-    addOutput(&_out, "Vector");    
+    addOutput("vector", &_out);    
 }
 
 
@@ -17,10 +17,12 @@ Vector::~Vector() {
     
 }
 
+
 void Vector::evaluate(float theDelta) {
     const Vec3d myV(0, 0, 0);
     
-	_out.set(myV);
+	_out.value(myV);
 }
+
 
 REGISTER_NODE("vector", Vector)

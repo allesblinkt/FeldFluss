@@ -7,7 +7,7 @@ namespace feld { namespace fluss {
 
 using namespace std;
 
-template<class T> 
+template<typename T> 
 Node* node_factory() {
     return new T;
 }

@@ -5,9 +5,9 @@ using namespace feld::fluss;
 Inv::Inv() {
     name("Invert");
     
-    addInput(&_in);
+    addInput("input", &_in);
     
-    addOutput(&_out);
+    addOutput("output", &_out);
     
     state(WARNING);
 }
@@ -19,7 +19,7 @@ Inv::~Inv() {
 
 void Inv::evaluate(float theDelta) {
 	const double myResult = 1 * -1;
-	_out.set(myResult);
+	_out.value(myResult);
 }
 
 

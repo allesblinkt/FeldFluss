@@ -3,25 +3,23 @@
 #include "../base/Node.h"
 #include "../base/NodeRegistry.h"
 
+
 namespace feld { namespace fluss {
     
-class VectorComponents : public Node
-{
-public:
-	VectorComponents();
-	~VectorComponents();
+class VectorComponents : public Node {
+    private:
+        NodeInput<Vec3d> _in;
     
-	void evaluate(float theDelta);
-    
-private:
-	NodeInput<Vec3d> _in;
-    
-	NodeOutput<double> _outX;
-    NodeOutput<double> _outY;
-	NodeOutput<double> _outZ;
+        NodeOutput<double> _outX;
+        NodeOutput<double> _outY;
+        NodeOutput<double> _outZ;    
 
     
+    public:
+        VectorComponents();
+        ~VectorComponents();
     
+        void evaluate(float theDelta);
 };
     
 } }

@@ -2,15 +2,22 @@
 
 using namespace feld::fluss;
 
-template <class T>
+template <typename T>
 NodeInput<T>::NodeInput() {
 }
 
 
-template <class T>
+template <typename T>
 NodeInput<T>::~NodeInput() {
     
 }
+
+
+template <typename T>
+void NodeInput<T>::foo() {
+    // TODO: remove me
+}
+
 
 
 #include "cinder/Vector.h"

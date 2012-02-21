@@ -5,10 +5,10 @@ using namespace feld::fluss;
 Add::Add() {
     name("Add");
     
-    addInput(&_in1);
-    addInput(&_in2);
+    addInput("first", &_in1);
+    addInput("second", &_in2);
     
-    addOutput(&_out);
+    addOutput("result", &_out);
     
     state(ERROR);
 }
@@ -18,9 +18,10 @@ Add::~Add() {
     
 }
 
+
 void Add::evaluate(float theDelta) {
 	const double mySum = 1 + 1;
-	_out.set(mySum);
+	_out.value(mySum);
 }
 
 

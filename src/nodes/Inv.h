@@ -7,18 +7,17 @@ namespace feld { namespace fluss {
     
 class Inv : public Node
 {
-public:
-	Inv();
-	~Inv();
-    
-	void evaluate(float theDelta);
-    
-private:
-	NodeInput<double> _in;
-    
-	NodeOutput<double> _out;
+    private:
+        NodeInput<double> _in;
+        NodeOutput<double> _out;
     
     
+    public:
+        Inv();
+        ~Inv();
+    
+        void evaluate(float theDelta);
+      
 };
     
 } }

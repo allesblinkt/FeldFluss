@@ -5,11 +5,11 @@ using namespace feld::fluss;
 VectorComponents::VectorComponents() {
     name("VecComponents");
     
-    addInput(&_in, "Vector");
+    addInput("vector", &_in);
     
-    addOutput(&_outX, "x");
-    addOutput(&_outY, "y");
-    addOutput(&_outZ, "z");
+    addOutput("x", &_outX);
+    addOutput("y", &_outY);
+    addOutput("z", &_outZ);
 
 }
 
@@ -21,9 +21,9 @@ VectorComponents::~VectorComponents() {
 void VectorComponents::evaluate(float theDelta) {
     const Vec3d* myV = NULL;
 
-	_outX.set(myV->x);
-    _outY.set(myV->y);
-	_outZ.set(myV->z);
+	_outX.value(myV->x);
+    _outY.value(myV->y);
+	_outZ.value(myV->z);
 }
 
 

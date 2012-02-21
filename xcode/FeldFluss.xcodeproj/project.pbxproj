@@ -15,7 +15,7 @@
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		00BAE65A0E7ED9C10018A608 /* FeldFlussApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00BAE6590E7ED9C10018A608 /* FeldFlussApp.cpp */; };
 		00CCAF15116A9FEE008396D5 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 00CCAF14116A9FEE008396D5 /* CinderApp.icns */; };
-		475559D914EDD31E00BC1876 /* NodeInputBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 475559D814EDD31E00BC1876 /* NodeInputBase.cpp */; };
+		473D599814F094D900352565 /* Fluss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 473D599714F094D800352565 /* Fluss.cpp */; };
 		475559DD14EDDCCB00BC1876 /* NodePortBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 475559DC14EDDCCB00BC1876 /* NodePortBase.cpp */; };
 		475559DF14EDDF2300BC1876 /* Inv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 475559DE14EDDF2300BC1876 /* Inv.cpp */; };
 		4774B10614EBFD0E00257425 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4774B0FD14EBFD0E00257425 /* Node.cpp */; };
@@ -47,11 +47,10 @@
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32CA4F630368D1EE00C91783 /* FeldFluss_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; path = FeldFluss_Prefix.pch; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* FeldFluss_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeldFluss_Prefix.pch; sourceTree = "<group>"; };
+		473D599614F094CD00352565 /* Fluss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fluss.h; sourceTree = "<group>"; };
+		473D599714F094D800352565 /* Fluss.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fluss.cpp; sourceTree = "<group>"; };
 		475559D614EDD30100BC1876 /* NodePortBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodePortBase.h; sourceTree = "<group>"; };
-		475559D814EDD31E00BC1876 /* NodeInputBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeInputBase.cpp; sourceTree = "<group>"; };
-		475559DA14EDD40E00BC1876 /* NodeInputBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeInputBase.h; sourceTree = "<group>"; };
-		475559DB14EDD40E00BC1876 /* NodeOutputBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeOutputBase.h; sourceTree = "<group>"; };
 		475559DC14EDDCCB00BC1876 /* NodePortBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodePortBase.cpp; sourceTree = "<group>"; };
 		475559DE14EDDF2300BC1876 /* Inv.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Inv.cpp; sourceTree = "<group>"; };
 		475559E014EDDF2B00BC1876 /* Inv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inv.h; sourceTree = "<group>"; };
@@ -189,21 +188,20 @@
 		4774B0FC14EBFD0E00257425 /* base */ = {
 			isa = PBXGroup;
 			children = (
-				475559DC14EDDCCB00BC1876 /* NodePortBase.cpp */,
-				475559DA14EDD40E00BC1876 /* NodeInputBase.h */,
-				475559DB14EDD40E00BC1876 /* NodeOutputBase.h */,
 				475559D614EDD30100BC1876 /* NodePortBase.h */,
-				4774B0FD14EBFD0E00257425 /* Node.cpp */,
+				475559DC14EDDCCB00BC1876 /* NodePortBase.cpp */,
 				4774B0FE14EBFD0E00257425 /* Node.h */,
-				4774B0FF14EBFD0E00257425 /* NodeInput.h */,
+				4774B0FD14EBFD0E00257425 /* Node.cpp */,
 				4774B10014EBFD0E00257425 /* NodeOutput.h */,
-				4774B10114EBFD0E00257425 /* NodeView.cpp */,
-				4774B10214EBFD0E00257425 /* NodeView.h */,
 				4774B10A14EC0D2F00257425 /* NodeOutput.cpp */,
+				4774B10214EBFD0E00257425 /* NodeView.h */,
+				4774B10114EBFD0E00257425 /* NodeView.cpp */,
+				4774B0FF14EBFD0E00257425 /* NodeInput.h */,
 				4774B10C14EC0D7000257425 /* NodeInput.cpp */,
-				475559D814EDD31E00BC1876 /* NodeInputBase.cpp */,
-				47D400F114EFCF32009D7647 /* NodeRegistry.cpp */,
 				47D400F314EFCF44009D7647 /* NodeRegistry.h */,
+				47D400F114EFCF32009D7647 /* NodeRegistry.cpp */,
+				473D599614F094CD00352565 /* Fluss.h */,
+				473D599714F094D800352565 /* Fluss.cpp */,
 			);
 			name = base;
 			path = ../src/base;
@@ -252,7 +250,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FeldFluss" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -294,12 +292,12 @@
 				4774B10814EBFD0E00257425 /* Add.cpp in Sources */,
 				4774B10B14EC0D2F00257425 /* NodeOutput.cpp in Sources */,
 				4774B10D14EC0D7000257425 /* NodeInput.cpp in Sources */,
-				475559D914EDD31E00BC1876 /* NodeInputBase.cpp in Sources */,
 				475559DD14EDDCCB00BC1876 /* NodePortBase.cpp in Sources */,
 				475559DF14EDDF2300BC1876 /* Inv.cpp in Sources */,
 				4788A0FD14EF034600E74276 /* VectorComponets.cpp in Sources */,
 				4788A10114EF057B00E74276 /* Vector.cpp in Sources */,
 				47D400F214EFCF32009D7647 /* NodeRegistry.cpp in Sources */,
+				473D599814F094D900352565 /* Fluss.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +307,7 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CINDER_PATH = ../../../tmp/Cinder;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
@@ -328,6 +327,7 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CINDER_PATH = ../../../tmp/Cinder;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_FAST_MATH = YES;

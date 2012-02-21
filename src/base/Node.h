@@ -8,11 +8,15 @@
 
 #include <vector>
 
-namespace feld { namespace fluss {
+using namespace std;
+
+namespace feld { namespace fluss { 
+
+class NodeView;
 
 enum NodeState { GOOD, WARNING, ERROR };
 
-class NodeView;    // resolve circular dependency
+
 
 class Node
 {
@@ -22,22 +26,33 @@ public:
 
 	virtual void evaluate(float theDelta) = 0;
 
-	std::vector<NodeInputBase*> inputs();
-	std::vector<NodeOutputBase*> outputs();
+	std::map<string, NodeInputBase*>& inputs();
+	std::map<string, NodeOutputBase*>& outputs();
 
 
-	void addInput(NodeInputBase* theInput, std::string theName = "");
-	void addOutput(NodeOutputBase* theOutput, std::string theName = "");
+	void addInput(string theIdentifier, NodeInputBase* theInput);
+	void addOutput(string theIdentifier, NodeOutputBase* theOutput);
 
 
+    vector<Node*> connectionsUp();
+    vector<Node*> connectionsDown();
+    
+    
+    bool isDirty();
+    void flagDirty(bool theFlag);
+    
+    
 	bool forceEval();
 	void forceEval(bool theFlag);
 
+    
 	std::string name();
 	void name(std::string theName);
     
+    
     NodeState state();
     void state(NodeState theState);
+    
     
 	NodeView* view();
 
@@ -48,8 +63,8 @@ private:
 	std::string _name;
     NodeState _state;
 
-	std::vector<NodeInputBase*> _inputs;
-	std::vector<NodeOutputBase*> _outputs;
+	std::map<string, NodeInputBase*> _inputs;
+	std::map<string, NodeOutputBase*> _outputs;
 
 	bool _forceEval;
 };
